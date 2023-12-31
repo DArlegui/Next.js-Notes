@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import schema from '../schema';
+import prisma from '@/prisma/client';
 //URL: http://localhost:3000/api/users/#
 
 //GET for getting a list of objects
-export function GET(request: NextRequest, { params }: { params: { id: number } }) {
-  if (params.id > 10) return NextResponse.json({ error: 'User not found' }, { status: 404 });
-  return NextResponse.json({ id: 1, name: 'Daniel' });
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+  const user = await prisma.user.findUnique({ where: { id: parseInt(params.id) } });
+  if (!user) return NextResponse.json({ error: 'User not found' }, { status: 404 });
+  return NextResponse.json(user);
 }
 
 //PUT for replacing an object
