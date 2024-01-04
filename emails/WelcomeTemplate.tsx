@@ -7,7 +7,7 @@ const WelcomeTemplate = ({ name }: { name: string }) => {
       <Body>
         <Container>
           <Text>Hello {name}</Text>
-          <Link href="https://darlegui-mini-portfolio.netlify.app/">My Website</Link>
+          <Link href="https://darlegui-mini-portfolio.netlify.app/">https://darlegui-mini-portfolio.netlify.app/</Link>
         </Container>
       </Body>
     </Html>
