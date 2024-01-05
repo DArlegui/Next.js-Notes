@@ -44,10 +44,20 @@ sizes="100vw"
 33vw 
 */
 
+import { Metadata } from 'next';
+
 export default async function Home() {
   return (
     <main>
       <h1 className="font-poppin">Hello World</h1>
     </main>
   );
+}
+
+export async function generatedMetadata(): Promise<Metadata> {
+  const product = await fetch('');
+  return {
+    title: 'product.title',
+    description: '....',
+  };
 }
