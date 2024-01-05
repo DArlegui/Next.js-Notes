@@ -16,7 +16,7 @@
 //   );
 // }
 
-// /* Optimization */
+// /* Optimizing Images */
 // import Image from 'next/image';
 // import coffee from '@/public/images/coffee.jpg';
 
@@ -44,20 +44,43 @@ sizes="100vw"
 33vw 
 */
 
-import { Metadata } from 'next';
+/* Search Engine Optimization */
+// import { Metadata } from 'next';
 
-export default async function Home() {
+// export async function generatedMetadata(): Promise<Metadata> {
+//   const product = await fetch('');
+//   return {
+//     title: 'product.title',
+//     description: '....',
+//   };
+// }
+
+/* Default */
+'use client';
+// import HeavyComponent from './components/HeavyComponent';
+import { useState } from 'react';
+// import _ from 'lodash';
+// import dynamic from 'next/dynamic';
+// const HeavyComponent = dynamic(() => import('./components/HeavyComponent'), {
+//   ssr: false,
+//   loading: () => <p>Loading...</p>,
+// });
+
+export default function Home() {
+  // const [isVisible, setVisible] = useState(false);
   return (
     <main>
-      <h1 className="font-poppin">Hello World</h1>
+      <h1>Hello World</h1>
+      <button
+        onClick={async () => {
+          const _ = (await import('lodash')).default;
+          const users = [{ name: 'c' }, { name: 'b' }, { name: 'a' }];
+          const sorted = _.orderBy(users, ['name']);
+          console.log(sorted);
+        }}>
+        Show
+      </button>
+      {/* {isVisible && <HeavyComponent />} */}
     </main>
   );
-}
-
-export async function generatedMetadata(): Promise<Metadata> {
-  const product = await fetch('');
-  return {
-    title: 'product.title',
-    description: '....',
-  };
 }
