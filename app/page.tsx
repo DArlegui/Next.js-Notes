@@ -16,25 +16,25 @@
 //   );
 // }
 
-/* Optimization */
-import Image from 'next/image';
-import coffee from '@/public/images/coffee.jpg';
+// /* Optimization */
+// import Image from 'next/image';
+// import coffee from '@/public/images/coffee.jpg';
 
-export default async function Home() {
-  return (
-    <main className="relative h-screen">
-      <Image
-        src="https://bit.ly/react-cover"
-        alt="Coffee"
-        fill
-        className="object-contain"
-        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-        quality={100}
-        priority
-      />
-    </main>
-  );
-}
+// export default async function Home() {
+//   return (
+//     <main className="relative h-screen">
+//       <Image
+//         src="https://bit.ly/react-cover"
+//         alt="Coffee"
+//         fill
+//         className="object-contain"
+//         sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+//         quality={100}
+//         priority
+//       />
+//     </main>
+//   );
+// }
 
 /* Notes
 style={{objectFit: 'cover' or 'contain'}}
@@ -43,3 +43,11 @@ sizes="100vw"
 (max-width: 768px) 50vw,  //Tablet devices
 33vw 
 */
+
+export default async function Home() {
+  return (
+    <main>
+      <h1 className="font-poppin">Hello World</h1>
+    </main>
+  );
+}
