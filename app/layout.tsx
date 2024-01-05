@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import NavBar from './NavBar';
 import AuthProvider from './auth/Provider';
 import './globals.css';
+import GoogleAnalyticsScript from './GoogleAnalyticsScript';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="dim">
+      <GoogleAnalyticsScript />
       <body className={inter.className}>
         <AuthProvider>
           <NavBar />
